@@ -53,12 +53,12 @@ const pigLatin = (word) => {
   let splitValue = formattedWord.split("");
   if (isVowel(splitValue[0]) === true) {
     splitValue.push("yay");
-    let completedWord = splitValue.join("");
-    return moveAllSC(completedWord);
+    let completedWordVowel = splitValue.join("");
+    return moveAllSC(completedWordVowel);
   } else if (!!word.match(/[aeiou]/gi, "") === false) {
     splitValue.push("ay");
-    let completedWord = splitValue.join("");
-    return moveAllSC(completedWord);
+    let completedWordCons = splitValue.join("");
+    return moveAllSC(completedWordCons);
   } else {
     for (let i = 0; i < word.length; i++) {
       if (isVowel(splitValue[i]) === false) {
@@ -96,19 +96,19 @@ const loadTranslation = () => {
   }
 };
 
-// // the first function called in the program to get an input from the user
-// // to run the function use the command: node main.js
-// // to close it ctrl + C
-// const getPrompt = () => {
-//   rl.question("word ", (answer) => {
-//     console.log(pigLatin(answer));
-//     getPrompt();
-//   });
-// };
+// the first function called in the program to get an input from the user
+// to run the function use the command: node main.js
+// to close it ctrl + C
+const getPrompt = () => {
+  rl.question("word ", (answer) => {
+    console.log(pigLatin(answer));
+    getPrompt();
+  });
+};
 
-// // Unit Tests
-// // to use them run the command: npm test main.js
-// // to close them ctrl + C
+// Unit Tests
+// to use them run the command: npm test main.js
+// to close them ctrl + C
 // if (typeof describe === "function") {
 //   describe("#pigLatin()", () => {
 //     it("should translate a simple word", () => {

@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Piglatin Translator</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <hr />
-    <div id="display-element"></div>
-    <form>
-      <input id="user-input" type="text" />
-      <!-- How do you get this input sent to the pigLatin() function? -->
-      <button type="button" onclick="loadTranslation()">Translate</button>
-    </form>
-    <hr />
+    <div>
+      <h1>Piglatin Translator</h1>
+      <hr />
+      <form>
+        <textarea
+          id="user-input"
+          onkeyup="loadTranslation()"
+          placeholder="Type here!!"
+        ></textarea>
+        <textarea name="" id="display-element"></textarea>
+      </form>
+      <hr />
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
